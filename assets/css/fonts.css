@@ -1,0 +1,25 @@
+@font-face {
+    font-family: Montserrat-Bold;
+    src: url(../css/fonts/Montserrat-Bold.ttf);
+}
+
+@font-face {
+    font-family: Montserrat-Regular;
+    src: url(../css/fonts/Montserrat-Regular.ttf);
+}
+
+@font-face {
+    font-family: Montserrat-SemiBold;
+    src: url(../css/fonts/Montserrat-SemiBold.ttf);
+}
+
+@font-face {
+    font-family: Roboto-Regular;
+    src: url(../css/fonts/Roboto-Regular.ttf);
+}
+
+@font-face {
+    font-family: Roboto-Light;
+    src: url(../css/fonts/Roboto-Light.ttf);
+}
+

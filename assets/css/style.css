@@ -1,0 +1,416 @@
+
+/*-----------------Main-----------------*/
+
+*, *::before, *::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+*:focus{
+    outline: none;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    font: 14px Montserrat-Regular black;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+}
+
+a{
+    color: black;
+    text-decoration: none;
+}
+
+.container{
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+.products{
+    padding-bottom: 120px;
+}
+
+#toTop {
+    width:100px;
+    padding: 5px;
+    position:fixed;
+    bottom:40px; /* отступ кнопки от нижнего края страницы*/
+    right:15px;
+    cursor:pointer;
+    display:none;
+    color: white;
+    font: 14px Roboto-Regular;
+    }
+
+/*---------------------Header-----------------*/
+
+.header{
+    padding: 30px 0;
+}
+
+.header__inner{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header__logo{
+    display: flex;
+    align-items: center;
+}
+
+.logo__img{
+    margin-right: 15px;
+}
+
+.logo__text{
+    font: 32px Montserrat-Bold;
+}
+
+.header__contacts{
+    display: flex;
+    align-items: center;
+}
+
+.soc-seti-img{
+    margin-right: 15px;
+    border-radius: 50%;
+    transition: .2s ease-in-out;
+}
+
+.soc-seti-img[alt="VK"]:hover{
+    transition: box-shadow .2s ease-in-out;
+    box-shadow: 0 0 10px rgb(45, 156, 219);
+}
+
+.soc-seti-img[alt="Facebook"]:hover{
+    transition: box-shadow .2s ease-in-out;
+    box-shadow: 0 0 10px rgb(47, 128, 237);
+}
+
+.header-numb{
+    font: 20px Montserrat-Regular;
+    margin-left: 50px;
+}
+
+/*-------------------Menu------------------*/
+
+
+
+.menu__inner{
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+}
+
+.menu__nav{
+    display: flex;
+}
+
+.menu__a{
+    display: flex;
+    flex-direction: column;
+    font: 22px Roboto-Regular;
+    line-height: 22px;
+    margin-right: 20px;
+    transition: .2s;
+}
+
+.menu__a:last-child{
+    margin-right: 0;
+}
+
+.menu__a::after{
+    content: "";
+    width: 0;
+    height: 3px;
+    margin-top: 3px;
+    background-color: #F35801;
+    border-radius: 20px;
+    transition: width .2s ease-in-out;
+}
+
+.menu__a:hover::after{
+    width: 100%;
+    transition: width .2s ease-in-out;
+}
+
+.basket{
+    background-color: #F35801;
+    font-size: 20px;
+    border: 0;
+    cursor: pointer;
+    color: white;
+    padding: 5px 15px;
+    border-radius: 8px;
+    box-shadow: 0 5px 0 #d44e00;
+    transition: background-color .2s ease, box-shadow .2s ease;
+}
+
+.basket:hover{
+    transition: background-color .2s ease, box-shadow .2s ease, transform .2s ease;
+    background-color: #d44e00;
+    box-shadow: 0 5px 0 #b44200;
+}
+
+.basket:active{
+    transition: transform .1s linear, box-shadow .1s linear;
+    transform: translateY(2px);
+    box-shadow: 0 3px 0 #b44200;
+}
+
+
+/* ------------------Banner------------------- */
+
+.banner{
+    margin: 50px 0 80px;
+    height: 400px;
+    position: relative;
+}
+
+.banner__slider{
+    position: relative;
+}
+
+.banner__img{
+    width: 100%;
+    height: 400px;
+    border-radius: 50px;
+}
+
+
+.slick-track{
+    display: flex;
+    flex-direction: column;
+}
+
+.slick-list{
+    overflow: hidden;
+}
+
+.slick-arrow{
+    border-radius: 50%;
+    padding: 20px;
+    position: absolute;
+    right: calc(50% - 16px);
+    z-index: 10;
+    font-size: 0;
+    width: 32px;
+    height: 32px;
+    border: 0;
+}
+
+.slick-arrow.slick-next:hover,
+.slick-arrow.slick-prev:hover{
+    background-color: rgb(2, 156, 218);
+}
+
+.slick-arrow.slick-prev{
+    top: 5%;
+    background: url(../img/baners/prev-white.svg) 0 0 no-repeat;
+    background-position: center center;
+}
+
+.slick-arrow.slick-next{
+    bottom: 5%;
+    background: url(../img/baners/next-white.svg)  0 0 no-repeat;
+    background-position: center center;
+}
+
+.slick-dots{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    right: 5%;
+    top: calc(50% - 25px);
+}
+
+.slick-dots li{
+    list-style: none;
+    margin: 2px 0;
+}
+
+.slick-dots button{
+    border: 0;
+    font-size: 0;
+    width: 15px;
+    height: 15px;
+    background-color: white;
+    border-radius: 50%;
+}
+
+.slick-dots li.slick-active button{
+    background-color: transparent;
+    border: 2px solid white;
+}
+
+/* --------------------------Products-------------------------- */
+
+.section__title{
+    font: 32px Roboto-Light;
+    margin-bottom: 40px;
+}
+
+.section__cards{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.section__card{
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: space-between;
+    width: 23%;
+}
+
+.section__card:nth-child(n+5){
+    margin-top: 60px;
+}
+
+.card__img{
+    width: 100%;
+}
+
+.card__title {
+    font: 20px Montserrat-SemiBold;
+    margin: 8px 0 10px;
+}
+
+.card__text {
+    font: 14px Montserrat-Regular;
+    color: rgba(167, 75, 0, 0.849);
+}
+
+.card__order {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+}
+
+.card__price {
+    font: 18px Montserrat-Bold;
+}
+
+.card__price::before{
+    content: "от ";
+}
+
+.card__price::after{
+    content: " ₽";
+}
+
+.card__button {
+    margin-top: 25px;
+    position: relative;
+    background-color: #F35801;
+    border: 0;
+    border-radius: 8px;
+    padding: 10px 15px;
+    text-transform: uppercase;
+    color: white;
+    font: 14px Montserrat-Regular;
+    box-shadow: 0 5px 0 #d44e00;
+    transition: background-color .3s ease, box-shadow .3s ease;
+}
+
+.card__button:hover{
+    transition: background-color .3s ease, transform .1s ease, box-shadow .1s ease;
+    background-color: #d44e00;
+    box-shadow: 0 5px 0 #b44200;
+}
+
+.card__button:active{
+    transition: transform .1s linear, box-shadow .1s linear;
+    transform: translateY(2px);
+    box-shadow: 0 3px 0 #b44200;
+}
+
+/* -----------------------Dilivery------------------- */
+
+.dilivery__card {
+    width: 35%;
+}
+
+.dilivery__card:last-child{
+    width: 300px;
+}
+
+.dilivery__title {
+    display: inline-block;
+    font: 22px Roboto-Regular;
+    padding-bottom: 5px;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #F35801;
+}
+
+.dilivery__text {
+    font: 18px Roboto-Regular;
+    margin-bottom: 20px;
+}
+.dilivery__subtext {
+    font: 18px Roboto-Regular;
+    color: rgba(0, 0, 0, 0.637);
+}
+
+/* ---------------------Footer----------------- */
+
+.footer{
+    background-color: #3a3a3a;
+    padding: 30px 0;
+}
+
+.footer > *{
+    color: white;
+}
+
+.footer__inner {
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer__logo {
+    display: flex;
+    align-items: center;
+}
+
+.footer__info {
+    width: 50%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer__card {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer__title {
+    margin-bottom: 10px;
+    font: 16px Montserrat-SemiBold;
+}
+
+.footer__link {
+    margin-bottom: 3px;
+    color: rgba(255, 255, 255, 0.788);
+    font: 16px Montserrat-Regular;
+}
+
+.footer__link:hover{
+    color: white;
+}
+
+
+
+
+
+
+
